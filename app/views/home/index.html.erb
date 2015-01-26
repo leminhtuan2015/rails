@@ -1,0 +1,23 @@
+<h1>Currenu User :<%if current_user!= nil %> <%= current_user.name %> <%end%></h1>
+<br>
+<h1>Test : <%= test_module %></h1>
+<br>
+<%= link_to :Have_fun_in_my_app, controller: 'articles' %>
+</br>
+<hr>
+<%= link_to :Redis_pub_sub, home_redis_path %>
+</br>
+<hr>
+<%= link_to 'New article', new_article_path %>
+<hr>
+<%= link_to 'All article', articles_path %>
+<hr>
+<%= link_to 'Sign up', new_user_path %>
+<hr>
+<%= link_to 'Sign in', login_path %>
+<hr>
+<%= link_to 'Sign out', logout_path, method: :delete%>
+<hr>
+
+
+

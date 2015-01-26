@@ -1,0 +1,21 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
+<!--
+SessionsController # create
+POST   /login(.:format) sessions#create
+-->
+ <%= form_for(:session, url: login_path) do |f| %>
+ <!--
+"session"=>{"email"=>"gf@gmail.com", "password"=>"[FILTERED]"}
+-->
+  <%= f.label :email %>
+  <%= f.email_field :email%>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+    <%= f.submit "Log in" %>
+ <% end %>

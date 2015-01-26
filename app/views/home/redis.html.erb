@@ -1,0 +1,7 @@
+<%
+  data = {:from => current_user.name, :to => current_user.name, :sms =>"gagagaga"}
+  $redis.publish :happy, data.to_json
+  p 'published'
+%>
+
+redis

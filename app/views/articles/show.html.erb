@@ -1,0 +1,38 @@
+<script>
+   socket.on(<%=current_user.name%>, function(data) {
+     location.reload();
+   });
+</script>
+<h3>Article with id = <%= @article.id %> Added into SQLite. Succesfull !!!</h3>
+<hr>
+<h3><%= @article.object_id %> </h3>
+<hr>
+<%= link_to 'Back to create new article', new_article_path %>
+<hr>
+<%= link_to 'All articles', articles_path %>
+<hr>
+<%= link_to 'Edit', edit_article_path(@article) %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<h2>Comments</h2>
+  <%= render @article.comments %>
+<hr>
+
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<!--
+  The @article object is available to any partials rendered in the view because we defined it as an instance variable.
+
+  render => include code html from others file
+-->
